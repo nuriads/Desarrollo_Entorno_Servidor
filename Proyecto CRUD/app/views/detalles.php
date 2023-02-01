@@ -57,7 +57,7 @@ $url=imagenPerfil($cli->id,$cli->first_name,$cli->last_name);
 
 <form action="pdf.php">
 <input type="hidden" name="id" value="<?= $cli->id ?>">
-<button type="submit" value="PDF">Generar PDF</button>
+<button type="submit" value="PDF">Imprimir</button>
 </form>
 
 <form>
