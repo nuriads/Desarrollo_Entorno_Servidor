@@ -68,19 +68,23 @@ function checkImagen(array $imagen){
      //MEJORA SUBIR
      $msg="";
      $limitebytes=1000000;
-    
-     if($imagen["error"]>0){
-         $msg.= "error, no se subió la imagen";
-     }   
+    if($imagen["size"]>0){
 
-    if($imagen["size"]>$limitebytes){
-        $msg.="error, la imagen debe pesar menos de 1000kb";
+        if($imagen["error"]>0){
+            $msg.= "Error, no se subió la imagen";
+        }   
+   
+       if($imagen["size"]>$limitebytes){
+           $msg.="error, la imagen debe pesar menos de 1000kb";
+       }
+       if($imagen["type"] != "image/jpeg"){
+           $msg.="Error, la imagen debe ser .jpg";
+         
+       }
+
+
     }
-    if($imagen["type"] != "image/jpeg"){
-        $msg.="error, la imagen debe ser .jpg";
-      
-    }
-        
+    
      
      return $msg;
 }
